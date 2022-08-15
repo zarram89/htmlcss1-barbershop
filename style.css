@@ -27,11 +27,6 @@
   background-image: url("img/bg.jpg");
   background-position: top center;
   background-repeat: no-repeat;
-
-  min-height: 100%;
-  display: grid;
-  grid-template-rows: min-content 1fr min-content;
-  align-content: start;
 }
 
 a {
@@ -49,20 +44,44 @@ img {
   height: 100%;
 }
 
+.page-body {
+  min-height: 100%;
+  display: grid;
+  grid-template-rows: min-content 1fr min-content;
+  align-content: start;
+}
+
 /* Main header */
 
 .main-header {
   margin-bottom: 70px;
 }
 
+
 /* Main navigation */
 
 .main-navigation {
-  display: grid;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
   font-size: 16px;
   line-height: 20px;
   color: var(--basic-white);
   background-color: transparent;
+}
+
+.main-navigation-wrapper {
+  width: 100%;
+  margin-bottom: 60px;
+  background-color: var(--basic-black);
+}
+
+/* Logo */
+
+.main-header-logo {
+  order: 2;
+  width: 368px;
+  height: 153px;
 }
 
 /* Container */
@@ -73,28 +92,18 @@ img {
   padding: 0 10px;
 }
 
-/* Logo */
-
-.main-header-logo {
-  order: 1;
-  justify-self: center;
+.main-navigation-wrapper .container {
+  display: flex;
+  justify-content: space-between;
 }
 
-.main-header-bar {
-  background-color: var(--basic-black);
-}
-
-.main-navigation-wrapper {
-  display: grid;
-  grid-template-columns: 1fr min-content;
-  width: 940px;
-  margin: 0 auto;
-  padding: 0 10px;
-}
+/* Site Navigation */
 
 .site-navigation {
+  width: 620px;
   margin: 0;
   padding: 0;
+  min-height: 70px;
   list-style: none;
 }
 
@@ -103,6 +112,10 @@ img {
 }
 
 /* User navigation */
+
+.user-navigation {
+  max-width: 140px;
+}
 
 .site-navigation a,
 .user-navigation a {
@@ -116,11 +129,17 @@ img {
   background-color: var(--basic-extra-dark);
 }
 
+/* Login link */
+.user-navigation .login-link {
+  padding-left: 50px;
+}
+
 /* Features */
 
 .features {
   margin-bottom: 80px;
 }
+
 
 .features-list {
   display: grid;
@@ -129,6 +148,7 @@ img {
   margin: 0;
   padding: 0;
   list-style: none;
+
 }
 
 .feature-item {
@@ -144,40 +164,50 @@ img {
   margin: 0 10px;
 }
 
+
 /* Index columns */
 
 .index-columns {
-  display: grid;
-  grid-template-columns: 1fr 1fr;
+  display: flex;
+  justify-content: space-between;
   margin-bottom: 35px;
   color: var(--basic-black);
   background-color: var(--basic-extra-light);
   background-image: url("img/pattern-light.jpg");
-  background-position: 0 0;
-  background-repeat: repeat;
+  background-position: center, 0 0;
+  background-repeat: no-repeat, repeat;
 }
 
 .index-columns h2 {
+  margin: 0;
+  margin-bottom: 25px;
   font-size: 30px;
   line-height: 42px;
 }
 
 /* News */
 
+.news {
+  width: 380px;
+}
+
 .news-list {
   list-style: none;
 }
 
-/* Gallery */
+.news-item {
+  margin-bottom: 25px;
+}
 
-.gallery-content {
-  background-color: var(--basic-dark);
-  border: 7px solid var(--basic-white);
+.news-item p {
+  margin: 0;
 }
 
 /* Button */
 
 .button {
+  display: inline-block;
+  margin-right: 16px;
   font: inherit;
   text-align: center;
   color: var(--basic-white);
@@ -200,15 +230,57 @@ img {
   background-color: var(--basic-black);
 }
 
+/* Gallery */
+
+.gallery {
+  width: 300px;
+}
+
+.gallery-container {
+  height: 260px;
+}
+
+.gallery-content {
+  height: 164px;
+  margin: 0;
+  background-color: var(--basic-dark);
+  border: 7px solid var(--basic-white);
+}
+
+.gallery-content img {
+  width: 286px;
+  height: 164px;
+}
+
 /* Contacts */
 
-.contacts-phone {
-  color: inherit;
+.contacts {
+  width: 380px;
+}
+
+.contacts p {
+  margin: 0;
+  margin-bottom: 25px;
 }
 
 /* Appointment */
 
+.appointment {
+  width: 300px;
+}
+
+.appointment-info {
+  margin: 0;
+  margin-bottom: 15px;
+}
+
+.appointment-item {
+  margin-top: 0;
+  margin-bottom: 10px;
+}
+
 .appointment-item input {
+  width: 140px;
   font: inherit;
   background-color: transparent;
   border: 2px solid var(--basic-black);
@@ -217,6 +289,12 @@ img {
 .appointment-item input:focus {
   border-color: var(--special);
 }
+
+.appointment .button {
+  margin-top: 10px;
+  margin-right: 0;
+}
+
 
 /* Main footer */
 
@@ -237,7 +315,10 @@ img {
 
 .footer-contacts {
   margin: 0;
-  width: 320px;
+}
+
+.footer-contacts p {
+  margin: 0;
 }
 
 .footer-contacts a {
@@ -257,12 +338,39 @@ img {
 }
 
 .footer-social ul {
+  width: 141px;
+  margin: 0 auto;
+  padding: 0;
   list-style: none;
 }
 
 .footer-social h2 {
   font-size: 14px;
 }
+
+.footer-copyright {
+  max-width: 150px;
+  margin: 0;
+  justify-self: end;
+  text-align: center;
+}
+
+.footer-copyright .button {
+  display: block;
+  margin-right: 0;
+}
+
+.footer-copyright b {
+  display: block;
+  margin-bottom: 15px;
+}
+
+.footer-copyright .button:hover,
+.footer-copyright .button:focus {
+  color: var(--basic-black);
+  background-color: var(--basic-white);
+}
+
 
 /* Social button */
 
@@ -273,12 +381,6 @@ img {
 .social-button:hover,
 .social-button:focus {
   background-color: var(--basic-white);
-}
-
-.footer-copyright {
-  max-width: 150px;
-  margin: 0;
-  justify-self: end;
 }
 
 .footer-copyright .button:hover,
@@ -299,11 +401,23 @@ img {
 }
 
 .modal-login h2 {
+  margin: 0;
+  margin-bottom: 20px;
   font-size: 30px;
   line-height: 42px;
 }
 
+.modal-description {
+  margin: 0;
+  margin-bottom: 10px;
+}
+
 /* Login form */
+
+.login-form p {
+  margin: 0;
+  margin-bottom: 10px;
+}
 
 .login-form input[type="email"],
 .login-form input[type="password"] {
@@ -318,6 +432,10 @@ img {
   border-color: var(--special);
 }
 
+.login-form .login-help {
+  margin: 15px 0;
+}
+
 .login-icon-user {
   background-image: url("img/user.svg");
   background-position: 270px center;
@@ -329,6 +447,7 @@ img {
   background-position: 270px center;
   background-repeat: no-repeat;
 }
+
 
 /* Restore */
 

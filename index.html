@@ -9,7 +9,7 @@
   <link rel="apple-touch-icon" href="favicon/152.png">
   <link rel="manifest" href="manifest.webmanifest">
   <link rel="stylesheet"
-    href="https://fonts.googleapis.com/css?family=PT+Sans+Narrow:400,700&amp;subset=latin,cyrillic;display=swap">
+    href="https://fonts.googleapis.com/css?family=PT+Sans+Narrow:400,700&amp;subset=latin,cyrillic">
   <link href="normalize.css" rel="stylesheet">
   <link href="style.css" rel="stylesheet">
 </head>
@@ -21,8 +21,8 @@
       <a class="main-header-logo">
         <img src="img/index-logo.svg" width="368" height="153" alt="Логотип барбершопа «Бородинский»">
       </a>
-      <div class="main-header-bar">
-        <div class="main-navigation-wrapper">
+      <div class="main-navigation-wrapper">
+        <div class="container">
           <ul class="site-navigation">
             <li><a href="blank.html">Информация</a></li>
             <li><a href="blank.html">Новости</a></li>
@@ -147,7 +147,7 @@
           Барбершоп «Бородинский»<br>
           Адрес: г. Санкт-Петербург, Б. Конюшенная, д. 19/8<br>
           <a href="blank.html">Как нас найти?</a><br>
-          Телефон: <a href="tel:+78126660266">+7 (812) 666-02-66</a>
+          Телефон: +7 (812) 666-02-66
         </p>
       </section>
       <section class="footer-social">
@@ -190,6 +190,37 @@
       </p>
     </div>
   </footer>
+
+  <section class="modal">
+    <h2>Личный кабинет</h2>
+    <p>Введите пожалуйста свой логин и пароль</p>
+    <form class="login-form" action="https://echo.htmlacademy.ru" method="post">
+      <p>
+        <label for="login-login">Логин</label>
+        <input class="login-icon-user" id="login-login" type="email" name="login" placeholder="email@example.com">
+      </p>
+      <p>
+        <label for="login-password">Пароль</label>
+        <input class="login-icon-password" id="login-password" type="password" name="password" placeholder="••••••••">
+      </p>
+      <p class="login-help">
+        <label class="login-checkbox">
+          <input type="checkbox" name="remember">
+          <span class="checkbox-indicator"></span>
+          Запомните меня
+        </label>
+        <a class="restore" href="#">Я забыл пароль!</a>
+      </p>
+      <button class="button" type="submit">Войти</button>
+    </form>
+    <button type="button">Закрыть</button>
+  </section>
+
+  <section class="modal">
+    <h2>Как до нас добраться</h2>
+    <!-- Здесь будет карта -->
+    <button type="button">Закрыть</button>
+  </section>
 
 </body>
 
