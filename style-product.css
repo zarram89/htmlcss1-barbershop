@@ -13,7 +13,7 @@
 
 /* Global */
 
-body {
+.page-body {
   min-width: 960px;
   margin: 0;
   padding: 0;
@@ -60,12 +60,12 @@ img {
 }
 
 .page-product .page-title {
-   grid-column: 1 / -1;
+  grid-column: 1 / -1;
 }
 
 .page-product .breadcrumbs {
-   grid-column: 1 / -1;
-   margin-bottom: 40px;
+  grid-column: 1 / -1;
+  margin-bottom: 40px;
 }
 
 /* Main header */
@@ -74,14 +74,40 @@ img {
   margin-bottom: 70px;
 }
 
+.inner-page .main-header {
+  margin-bottom: 70px;
+  background-color: var(--basic-black);
+}
+
 /* Main navigation */
 
 .main-navigation {
-  display: grid;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
   font-size: 16px;
   line-height: 20px;
   color: var(--basic-white);
   background-color: transparent;
+}
+
+.inner-page .main-navigation {
+  align-items: flex-start;
+  flex-direction: row;
+}
+
+.main-navigation-wrapper {
+  width: 100%;
+  margin-bottom: 60px;
+  background-color: var(--basic-black);
+}
+
+/* Logo */
+
+.inner-page .main-header-logo {
+  order: 0;
+  width: 111px;
+  height: 24px;
 }
 
 /* Container */
@@ -92,39 +118,26 @@ img {
   padding: 0 10px;
 }
 
-/* Logo */
-
-.main-header-logo {
-  order: 1;
-  justify-self: center;
+.main-navigation .container {
+  display: flex;
 }
 
-.main-header-bar {
-  background-color: var(--basic-black);
-}
-
-.main-navigation-wrapper {
-  display: grid;
-  grid-template-columns: 1fr min-content;
-  width: 940px;
-  margin: 0 auto;
-  padding: 0 10px;
-}
-
-.inner-page .main-navigation-wrapper {
-  grid-template-columns: 170px 1fr min-content;
-}
-
-.inner-page .main-header-logo {
-  order: 0;
+.main-navigation-wrapper .container {
+  display: flex;
+  justify-content: space-between;
 }
 
 /* Site Navigation */
 
 .site-navigation {
+  width: 620px;
   margin: 0;
   padding: 0;
   list-style: none;
+}
+
+.site-navigation-current {
+  position: relative;
 }
 
 .site-navigation-current a:not([href]) {
@@ -134,7 +147,11 @@ img {
 /* User navigation */
 
 .user-navigation {
-  
+  max-width: 140px;
+}
+
+.inner-page .user-navigation {
+  margin-left: auto;
 }
 
 .site-navigation a,
@@ -147,6 +164,12 @@ img {
 .user-navigation a:hover,
 .user-navigation a:focus {
   background-color: var(--basic-extra-dark);
+}
+
+/* Login link */
+
+.user-navigation .login-link {
+  padding-left: 50px;
 }
 
 /* Button */
